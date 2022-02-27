@@ -10,8 +10,10 @@ Liquid::set('INCLUDE_PREFIX', '');
 Liquid::set('INCLUDE_ALLOW_EXT', true);
 Liquid::set('ESCAPE_BY_DEFAULT', true);
 
-$template = new Template(__DIR__.'/templates/');
-$input = "Hello, {% include 'honorific.html' %}{{ plain-html | raw }} {{ comment-with-xss }}";
+$template = new Template(__DIR__.'/templates/_include/');
+
+$input = file_get_contents("templates/home.html");
+
 $template->parse($input);
 $template->setCache(new Local());
 
