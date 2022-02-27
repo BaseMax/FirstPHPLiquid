@@ -6,7 +6,7 @@ First project to show you how use and handle **Liquid template engine** at your 
 
 Running `composer require liquid/liquid`
 
-```
+```php
 require_once "vendor/autoload.php";
 
 use Liquid\Liquid;
